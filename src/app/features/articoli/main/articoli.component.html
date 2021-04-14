@@ -1,0 +1,27 @@
+<div class="tabella">
+    <table>
+       <tr class="tabletitle">
+        <td>id</td>
+        <td>descrizione</td>
+        <td>foto</td>
+        <td>nome</td>
+        <td>prezzo</td>
+        <td>prodotto in vetrina </td>
+       </tr> 
+       <tr *ngFor="let art of articoli | async">
+        <td *ngIf="art.id%2==0" class="maron">{{art.id}}</td>
+        <td *ngIf="art.id%2==0" class="maron">{{art.descrizione}}</td>
+        <td  *ngIf="art.id%2==0" class="maron">{{art.foto}}</td>
+        <td  *ngIf="art.id%2==0" class="maron">{{art.nome}}</td>
+        <td  *ngIf="art.id%2==0" class="maron">{{art.prezzo}}</td>
+        <td  *ngIf="art.id%2==0" class="maron">{{art.hot}}</td>
+
+        <td *ngIf="art.id%2!=0" >{{art.id}}</td>
+        <td *ngIf="art.id%2!=0" >{{art.descrizione}}</td>
+        <td  *ngIf="art.id%2!=0">{{art.foto}}</td>
+        <td  *ngIf="art.id%2!=0">{{art.nome}}</td>
+        <td  *ngIf="art.id%2!=0">{{art.prezzo}}</td>
+        <td  *ngIf="art.id%2!=0">{{art.hot}}</td>
+       </tr>
+    </table>
+</div>
