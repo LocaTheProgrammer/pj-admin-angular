@@ -1,0 +1,56 @@
+
+ <!-- class="hot_prods_table" -->
+ <div class="grid">
+    <ng-container *ngFor="let art of articoli | async" >
+        <ng-container *ngIf="art.id==id" >
+            <form [formGroup]="updateArticoloForm" (ngSubmit)="updateArticolo()">
+                <table>
+                    <tr>
+                        <td>
+                            nome:
+                        </td>
+                        <td>
+                             <input type="text" placeholder="{{art.nome}}" formControlName="nome">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            descri:
+                        </td>
+                    
+                        <td>
+                             <input type="text" placeholder="{{art.descrizione}}" formControlName="descrizione"> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            prezzo:
+                        </td>
+                        <td>
+                             <input type="text" placeholder="{{art.prezzo}}" formControlName="prezzo"> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            genere:
+                        </td>
+                        <td>
+                            <select formControlName="genere"> <br>
+                                <option value="uomo">uomo</option>
+                                <option value="donna">donna</option>
+                           </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <button type="submit">CONFERMA</button>
+                        </td>
+                    </tr>
+                </table>
+                    
+                  
+            </form> 
+    </ng-container>    
+</ng-container>
+  </div>

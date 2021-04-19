@@ -27,4 +27,10 @@ export class ArticoliComponent implements OnInit {
    
   }
 
+  redirect:string
+  modifica(id: number){
+    console.log(id)
+    this.redirect="articoli/modifica?id="+id;
+    this.router.navigateByUrl(this.redirect)
+  }
 }
