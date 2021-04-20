@@ -1,0 +1,54 @@
+
+ <!-- class="hot_prods_table" -->
+ <div class="grid">
+    
+            <form [formGroup]="createrticoloForm" (ngSubmit)="creaArticolo()">
+                <table>
+                    <tr>
+                        <td>
+                            nome:
+                        </td>
+                        <td>
+                             <input type="text" placeholder="nome" formControlName="nome">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            descri:
+                        </td>
+                    
+                        <td>
+                             <input type="text" placeholder="descrizione" formControlName="descrizione"> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            prezzo:
+                        </td>
+                        <td>
+                             <input type="text" placeholder="prezzo" formControlName="prezzo"> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            genere:
+                        </td>
+                        <td>
+                            <select formControlName="genere"> <br>
+                                <option value="uomo">uomo</option>
+                                <option value="donna">donna</option>
+                           </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <button type="submit">CONFERMA</button>
+                        </td>
+                    </tr>
+                </table>
+                    
+                  
+            </form> 
+
+  </div>

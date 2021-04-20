@@ -1,1 +1,28 @@
-<p>magazzino works!</p>
+<<div class="tabella">
+    <table>
+       <tr class="tabletitle">
+       
+        <td>idArticolo</td>
+        <td>disponibilita</td>
+        <td>preorder</td>
+
+       </tr> 
+       <tr *ngFor="let art of magazzino | async">
+      
+        <td *ngIf="art.id%2==0" class="maron">{{art.idArticolo}}</td>
+        <td  *ngIf="art.id%2==0" class="maron">{{art.disponibilita}}</td>
+        <td  *ngIf="art.id%2==0" class="maron">{{art.preorder}}</td>
+
+        <td  *ngIf="art.id%2==0" class="maron"><button (click)="modifica(art.id)">MODIFICA</button></td>
+       
+
+      
+        <td *ngIf="art.id%2!=0" >{{art.idArticolo}}</td>
+        <td  *ngIf="art.id%2!=0">{{art.disponibilita}}</td>
+        <td  *ngIf="art.id%2!=0">{{art.preorder}}</td>
+
+        <td  *ngIf="art.id%2!=0" class="maron"><button (click)="modifica(art.id)">MODIFICA</button></td>
+        
+       </tr>
+    </table>
+</div>

@@ -23,8 +23,8 @@ export class MagazzinoEffects {
         return this.http.retrievePostCall<Response>('magazzino/create',{carta, indirizzo, cap,citta, nazione,emailUtente});
     }
 
-    findUpdateMagazzino(id:string, ragioneSociale:string, partitaIva:string, emailUtente:string, sede: string, residenza: string, name:string){
-        return this.http.retrievePostCall<Response>('magazzino/update',{id, ragioneSociale, partitaIva,emailUtente,sede,residenza,name});
+    findUpdateMagazzino(id:number, idArticolo:number, disponibilita:number, preorder:number){
+        return this.http.retrievePostCall<Response>('magazzino/update',{id,idArticolo,disponibilita,preorder});
     }
 
     deleteMagazzino(id: string): Observable<Response>{
@@ -36,14 +36,11 @@ export class MagazzinoEffects {
         ofType(updateMagazzino),
         switchMap((action) => this.findUpdateMagazzino(
             action.id,
-            action.ragioneSociale,
-            action.partitaIva,
-            action.email,
-            action.sede,
-            action.residenza,
-            action.name).pipe(
+            action.idArticolo,
+            action.disponibilita,
+            action.preorder).pipe(
             map((response) => initMagazzinos({ response }))
-            ,tap(()=>this.router.navigateByUrl('/redirectmagazzino'))
+            ,tap(()=>this.router.navigateByUrl('/home'))
         ))
     ));
 

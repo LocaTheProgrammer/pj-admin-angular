@@ -26,8 +26,9 @@ export class ArticolosEffects {
     }
 
   
-    findUpdateArticolo(id:string, description:string, measureUnit:string,name:string,price:string,sconto:string): Observable<Response>{
-        return this.http.retrievePostCall<Response>('articolo/update',{id,description,measureUnit,name,price,sconto});
+    findUpdateArticolo(id: string, nome:string, descrizione:string,prezzo:string,genere:string): Observable<Response>{
+        console.log("chiamata update")
+        return this.http.retrievePostCall<Response>('articolo/update',{id,nome,descrizione,prezzo,genere});
     }
 
     deleteArticolo(id:string){
@@ -44,8 +45,8 @@ export class ArticolosEffects {
    
 
   
-    createArticolo( description:string, measureUnit:string, name:string, price:string, scontoProd:string): Observable<Response>{
-        return this.http.retrievePostCall<Response>('articolo/create',{description, measureUnit,name, price,scontoProd});
+    createArticolo( nome:string, descrizione:string,prezzo:string,genere:string): Observable<Response>{
+        return this.http.retrievePostCall<Response>('articolo/create',{nome,descrizione,prezzo,genere});
     }
 
 
@@ -69,13 +70,12 @@ export class ArticolosEffects {
     createArticolo$: Observable<Action> = createEffect(() => this.actions$.pipe(
         ofType(createArticolo),
         switchMap((action) => this.createArticolo(
-            action.description,
-            action.measureUnit,
-            action.name,
-            action.price,
-            action.sconto).pipe(
+            action.nome,
+            action.descrizione,
+            action.prezzo,
+            action.genere).pipe(
             map((response) => initArticolos({ response })),
-            tap(()=>this.router.navigateByUrl('/redirectarticolos'))
+            tap(()=>this.router.navigateByUrl('/home'))
         ))
     ));
 
@@ -86,13 +86,12 @@ export class ArticolosEffects {
         ofType(updateArticolo),
         switchMap((action) => this.findUpdateArticolo(
             action.id,
-            action.description,
-            action.measureUnit,
-            action.name,
-            action.price,
-            action.scontoProd).pipe(
+            action.nome,
+            action.descrizione,
+            action.prezzo,
+            action.genere).pipe(
             map((response) => initArticolos({ response }))
-            ,tap(()=>this.router.navigateByUrl('/redirectarticolos'))
+            ,tap(()=>this.router.navigateByUrl('/home'))
         ))
     ));
     

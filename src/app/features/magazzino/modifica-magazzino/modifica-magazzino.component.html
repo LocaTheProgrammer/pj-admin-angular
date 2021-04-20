@@ -1,0 +1,37 @@
+<!-- class="hot_prods_table" -->
+<div class="grid">
+    <ng-container *ngFor="let art of magazzinos | async" >
+        <ng-container *ngIf="art.id==id" >
+            <form [formGroup]="updateMagazzinoForm" (ngSubmit)="updateMagazzino()">
+                <table>
+                   
+                    <tr>
+                        <td>
+                            disponibilità:
+                        </td>
+                    
+                        <td>
+                             <input type="text" placeholder="{{art.disponibilita}}" formControlName="disponibilita"> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            preorder:
+                        </td>
+                        <td>
+                             <input type="text" placeholder="{{art.preorder}}" formControlName="preorder"> 
+                        </td>
+                    </tr>
+                   
+                    <tr>
+                        <td>
+                            <button type="submit">CONFERMA</button>
+                        </td>
+                    </tr>
+                </table>
+                    
+                  
+            </form> 
+    </ng-container>    
+</ng-container>
+  </div>
