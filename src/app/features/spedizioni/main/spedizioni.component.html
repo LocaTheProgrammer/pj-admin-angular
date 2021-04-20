@@ -1,1 +1,43 @@
-<p>spedizioni works!</p>
+<div class="tabella">
+    <table>
+       <tr class="tabletitle">
+        <td>id</td>
+        <td>email</td>
+        <td>articoli</td>
+        <td>quantita</td>
+        <td>totale</td>
+        <td>cap</td>
+        <td>citta</td>
+        <td>indirizzo</td>
+        <td>nazione</td>
+       </tr> 
+       <tr *ngFor="let art of spedizioni | async">
+        <td *ngIf="art.id%2==0" class="maron">{{art.id}}</td>
+        <td *ngIf="art.id%2==0" class="maron">{{art.emailUtente}}</td>
+        <td  *ngIf="art.id%2==0" class="maron">{{art.idArticoli}}</td>
+        <td  *ngIf="art.id%2==0" class="maron">{{art.quantita}}</td>
+        <td  *ngIf="art.id%2==0" class="maron">{{art.totale}}</td>
+        <td  *ngIf="art.id%2==0" class="maron">{{art.cap}}</td>
+        <td  *ngIf="art.id%2==0" class="maron">{{art.citta}}</td>
+        <td  *ngIf="art.id%2==0" class="maron">{{art.indirizzo}}</td>
+        <td  *ngIf="art.id%2==0" class="maron">{{art.nazione}}</td>
+
+      
+
+
+        <td *ngIf="art.id%2!=0" >{{art.id}}</td>
+        <td *ngIf="art.id%2!=0" >{{art.emailUtente}}</td>
+        <td *ngIf="art.id%2!=0" >{{art.idArticoli}}</td>
+        <td *ngIf="art.id%2!=0" >{{art.quantita}}</td>
+        <td *ngIf="art.id%2!=0" >{{art.totale}}</td>
+        <td *ngIf="art.id%2!=0" >{{art.cap}}</td>
+        <td *ngIf="art.id%2!=0" >{{art.citta}}</td>
+        <td *ngIf="art.id%2!=0" >{{art.indirizzo}}</td>
+        <td *ngIf="art.id%2!=0" >{{art.nazione}}</td>
+       
+      
+       </tr>
+    </table>
+    
+    
+</div>
