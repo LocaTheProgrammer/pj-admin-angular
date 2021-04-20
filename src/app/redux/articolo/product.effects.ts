@@ -39,7 +39,7 @@ export class ArticolosEffects {
         switchMap((action) => this.deleteArticolo(
             action.id).pipe(
             map((response) => initArticolos({ response })),
-            tap(()=>this.router.navigateByUrl('/redirectarticolos'))
+            tap(()=>this.router.navigateByUrl('/home'))
         ))
     ));
    

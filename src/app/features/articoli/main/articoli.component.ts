@@ -33,4 +33,8 @@ export class ArticoliComponent implements OnInit {
     this.redirect="articoli/modifica?id="+id;
     this.router.navigateByUrl(this.redirect)
   }
+
+  elimina(id:string){
+    this.articoloService.eliminaArticolo(id);
+  }
 }

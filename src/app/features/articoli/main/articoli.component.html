@@ -16,7 +16,7 @@
         <td  *ngIf="art.id%2==0" class="maron">{{art.prezzo}}</td>
         <td  *ngIf="art.id%2==0" class="maron">{{art.hot}}</td>
         <td  *ngIf="art.id%2==0" class="maron"><button (click)="modifica(art.id)">MODIFICA</button></td>
-        <td  *ngIf="art.id%2==0" class="maron"><button>ELIMINA</button></td>
+        <td  *ngIf="art.id%2==0" class="maron"><button (click)="elimina(art.id)">ELIMINA</button></td>
 
         <td *ngIf="art.id%2!=0" >{{art.id}}</td>
         <td *ngIf="art.id%2!=0" >{{art.descrizione}}</td>
@@ -25,7 +25,7 @@
         <td  *ngIf="art.id%2!=0">{{art.prezzo}}</td>
         <td  *ngIf="art.id%2!=0">{{art.hot}}</td>
         <td  *ngIf="art.id%2!=0" class="maron"><button (click)="modifica(art.id)">MODIFICA</button></td>
-        <td  *ngIf="art.id%2!=0" class="maron"><button>ELIMINA</button></td>
+        <td  *ngIf="art.id%2!=0" class="maron"><button (click)="elimina(art.id)">ELIMINA</button></td>
        </tr>
     </table>
     <br><br><br>
